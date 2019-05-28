@@ -1,0 +1,29 @@
+function onOpen(e){
+  Logger.log('Opened the doc ' + Date());
+  //DocumentApp.getUi().createMenu('Advanced').addItem('function1', 'fun1').addToUi();
+  var ui = DocumentApp.getUi();
+  ui.createMenu('Adv').addItem('function1', 'fun1').addItem('function2', 'fun2').addItem('function3', 'fun3').addToUi();
+}
+
+
+function fun3(){
+  var body = DocumentApp.getActiveDocument().getBody();
+  body.getChild(10).asText().setBold(true);
+  
+}
+
+function fun2(){
+  var body = DocumentApp.getActiveDocument().getBody();
+  Logger.log(body.getNumChildren());
+  for(var x=0;x<body.getNumChildren();x++){
+    var childElement = body.getChild(x);
+    Logger.log(childElement.getType());
+    Logger.log(childElement.asText().getText());
+    var myText = childElement.asText().getText();
+    if(myText == 'BLANK'){
+      childElement.asText().setText('BLANK');
+      
+    }
+    childElement.asText().appendText(':'+x);
+  }
+}

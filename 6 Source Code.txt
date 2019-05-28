@@ -1,0 +1,13 @@
+function fun2(){
+  var body = DocumentApp.getActiveDocument().getBody();
+  var paragraph = body.insertParagraph(0, 'First the Element of Page');
+  paragraph.appendText('More text');
+  paragraph.appendHorizontalRule();
+  paragraph.setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  paragraph.appendText('More text again');
+  var newParagraph = body.appendParagraph('Append P').editAsText();
+  newParagraph.setBackgroundColor('#ff00ff');
+  newParagraph.setForegroundColor('#ffffff');
+  newParagraph.setBold(true);
+  newParagraph.setFontSize(24);
+}

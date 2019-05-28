@@ -1,0 +1,14 @@
+function myFunction() {
+  var doc = DocumentApp.getActiveDocument();
+  Logger.log(doc.getName());
+}
+function onOpen(e){
+  Logger.log('Opened the doc ' + Date());
+  //DocumentApp.getUi().createMenu('Advanced').addItem('function1', 'fun1').addToUi();
+  var ui = DocumentApp.getUi();
+  ui.createMenu('Adv').addItem('function1', 'fun1').addToUi();
+}
+function fun1(){
+  Logger.log('Clicked'); 
+  
+}

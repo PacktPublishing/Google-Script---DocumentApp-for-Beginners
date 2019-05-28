@@ -1,0 +1,10 @@
+function fun2(){
+  var body = DocumentApp.getActiveDocument().getBody();
+  var arrayData = [['First','Second'],['Third','Fourth']];
+  var table = body.appendTable(arrayData);
+  table.setBorderWidth(2);
+  var header = table.getRow(0).editAsText();
+  header.setBold(true);
+  header.setBackgroundColor('#000000');
+  header.setForegroundColor('#ffffff');
+}
